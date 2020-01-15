@@ -3,7 +3,7 @@
 
 using namespace Napi;
 
-Value helloWorld(const CallbackInfo& info) {
+Value helloWorld(const CallbackInfo &info) {
 	Env env = info.Env();
 
 	return String::New(env, "Hello World!");

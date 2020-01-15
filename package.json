@@ -14,7 +14,7 @@
 		"node": ">=8"
 	},
 	"scripts": {
-		"lint": "xo",
+		"lint": "xo && clang-format -style=\"{UseTab: 'ForIndentation', TabWidth: 4, IndentWidth: 4,BasedOnStyle: 'google'}\" -i index.cc",
 		"test": "yarn lint && ava",
 		"build": "node-pre-gyp rebuild",
 		"publish": "node-pre-gyp rebuild && node-pre-gyp package && node-pre-gyp-github package"
