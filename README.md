@@ -15,27 +15,10 @@ npm install the-module
 ```js
 const theModule = require("the-module");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+theModule();
+//=> 'Hello World!'
 ```
 
 ## API
 
-### theModule(input, options?)
-
-#### input
-
-Type: `string`
-
-Lorem ipsum.
-
-#### options
-
-Type: `object`
-
-##### postfix
-
-Type: `string`\
-Default: `rainbows`
-
-Lorem ipsum.
+### theModule()

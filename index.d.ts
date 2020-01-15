@@ -1,14 +1,12 @@
 /**
  * My awesome module.
- * @param input Lorem ipsum.
- * @param postfix Lorem ipsum.
  * @example
  * ```
  * const theModule = require("the-module");
- * theModule("unicorns");
- * //=> 'unicorns & rainbows'
+ * theModule();
+ * //=> 'Hello World!'
  * ```
 */
-declare function theModule(input: string, { postfix }: { postfix?: string }): string;
+declare function theModule(): string;
 
 export = theModule;
