@@ -11,13 +11,14 @@
 		"index.d.ts"
 	],
 	"engines": {
-		"node": ">=8"
+		"node": ">=8.16 <9 || >=10.60 <11 || >=11.8"
 	},
 	"scripts": {
 		"lint": "xo && clang-format -style=\"{UseTab: 'ForIndentation', TabWidth: 4, IndentWidth: 4,BasedOnStyle: 'google'}\" -i index.cc",
 		"test": "yarn lint && ava",
-		"build": "node-pre-gyp rebuild",
-		"publish": "node-pre-gyp rebuild && node-pre-gyp package && node-pre-gyp-github package"
+		"build": "node-pre-gyp configure rebuild",
+		"publish": "node-pre-gyp configure rebuild package && node-pre-gyp-github package",
+		"install": "node-pre-gyp install --fallback-to-build"
 	},
 	"keywords": [],
 	"dependencies": {
@@ -29,6 +30,7 @@
 		"ava": "^2.4.0",
 		"clang-format": "^1.4.0",
 		"eslint-config-richienb": "^0.3.0",
+		"node-gyp": "^6.1.0",
 		"node-pre-gyp-github": "^1.4.3",
 		"xo": "^0.25.3"
 	},
@@ -40,9 +42,12 @@
 	},
 	"binary": {
 		"module_name": "the-module",
-		"module_path": "./lib/binding/{configuration}/{node_abi}-{platform}-{arch}/",
-		"package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz",
+		"module_path": "./lib/binding/{configuration}/{napi_build_version}-{node_abi}-{platform}-{arch}/",
+		"package_name": "{module_name}-v{version}-{napi_build_version}-{node_abi}-{platform}-{arch}.tar.gz",
 		"host": "https://github.com/Richienb/the-module/releases/download/",
-		"remote_path": "{version}"
+		"remote_path": "{version}",
+		"napi_versions": [
+			4
+		]
 	}
 }

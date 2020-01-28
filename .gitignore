@@ -1,3 +1,7 @@
+# Build directories
+build*
+lib/*
+
 # Visual Studio Code
 
 .vscode/*
